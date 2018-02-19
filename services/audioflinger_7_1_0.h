@@ -327,6 +327,107 @@ public:
         return 0;
     }
 
+    // MediaTek additions
+    virtual status_t SetACFPreviewParameter(void *ptr __unused, size_t len __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual status_t SetHCFPreviewParameter(void *ptr __unused, size_t len __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayPlay_Start(int sample_rate __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayPlay_Stop()
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayPlay_Write(void *buffer __unused, int size_bytes __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayPlay_GetFreeBufferCount()
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayRec_Start(int sample_rate __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayRec_Stop()
+    {
+        return NO_ERROR;
+    }
+
+    virtual int xWayRec_Read(void *buffer __unused, int size_bytes __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int ReadRefFromRing(void*buf __unused, uint32_t datasz __unused, void* DLtime __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int GetVoiceUnlockULTime(void* DLtime __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual int SetVoiceUnlockSRC(uint outSR __unused, uint outChannel __unused)
+    {
+        return NO_ERROR;
+    }
+
+    virtual bool startVoiceUnlockDL()
+    {
+        return NO_ERROR;
+    }
+
+    virtual bool stopVoiceUnlockDL()
+    {
+        return NO_ERROR;
+    }
+
+    virtual void freeVoiceUnlockDLInstance()
+    {
+        return;
+    }
+
+    virtual bool getVoiceUnlockDLInstance()
+    {
+        return NO_ERROR;
+    }
+
+    virtual int GetVoiceUnlockDLLatency()
+    {
+        return NO_ERROR;
+    }
+
+    virtual status_t setSurroundOnOff(int value __unused)
+    {
+        return OK;
+    }
+
+    virtual status_t setSurroundMode(int value __unused)
+    {
+        return OK;
+    }
+
+    virtual status_t getHDMICapability(int* HDMI_ChannelCount __unused, int* HDMI_Bitwidth __unused,
+        int* HDMI_MaxSampleRate __unused)
+    {
+        return OK;
+    }
 };
 
 sp<IPrivateAfGlue> MiniAudioFlinger::gPrivateAfGlue;
